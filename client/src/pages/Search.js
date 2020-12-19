@@ -4,13 +4,13 @@ import BookJumbotron from "../components/BookJumbotron";
 import BookText from "../components/BookText";
 import BookCardList from "../components/BookCardList";
 
-const Search = ({ title, handleChange }) => {
+const Search = ({ title, handleChange, handleSubmit }) => {
   return (
     <div>
       <BookJumbotron title={title} />
-      <Container>
+      <Container className="mb-4">
         <div className="card p-3">
-          <BookText handleChange={handleChange} />
+          <BookText handleChange={handleChange} handleSubmit={handleSubmit} />
         </div>
       </Container>
       <BookCardList />

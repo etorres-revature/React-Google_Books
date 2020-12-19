@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 
+import API from "./utils/API"
+
 class App extends Component {
   constructor() {
     super();
@@ -33,6 +35,16 @@ class App extends Component {
     this.setState({ searchInput: e.target.value });
   };
 
+  handleSubmit =(e) => {
+    e.preventDefault();
+    API.getBook(this.state.search)
+    .then(res => {
+      console.log(res.data.items)
+      this.setState({books: [res.data.items]})
+    })
+    
+  }
+
   render() {
     return (
       <Router>
@@ -50,6 +62,7 @@ class App extends Component {
               <Search
                 title={this.state.search.title}
                 handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
               />
             )}
           />
