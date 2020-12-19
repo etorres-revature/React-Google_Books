@@ -1,13 +1,67 @@
-import "./App.css";
+import { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import BookNavbar from "./layout/BookNavbar";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>HELLO WORLD!!</h1>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      home: {
+        title: "Search and Save Books from the Google API",
+      },
+      search: {
+        title: "Search books from the Google Books API",
+      },
+      saved: {
+        title: "Saved books from the Google Books API",
+      },
+      searchInput: "",
+      books: [],
+      title: "",
+      authors: [],
+      description: [],
+      synopsis: "",
+      image: "",
+      link: "",
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({ searchInput: e.target.value });
+  };
+
+  render() {
+    return (
+      <Router>
+        <BookNavbar />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Home title={this.state.home.title} />}
+          />
+          <Route
+            exact
+            path="/search"
+            render={() => (
+              <Search
+                title={this.state.search.title}
+                handleChange={this.handleChange}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/saved"
+            render={() => <Saved title={this.state.saved.title} />}
+          />
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;

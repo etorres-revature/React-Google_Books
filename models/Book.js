@@ -11,10 +11,12 @@ const BookSchema = new Schema({
     type: Array,
     required: true,
   },
-  description: {},
-  synopsis: {},
-  image: { type: {} },
+  description: {type: String},
+  synopsis: {type: String},
+  image: { type: String},
   link: { type: String },
+  publisher: {type: String},
+  publishedDate: {type: String},
   dateAdded: { type: Date, default: Date.now },
 });
 
