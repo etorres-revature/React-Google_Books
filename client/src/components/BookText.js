@@ -1,13 +1,13 @@
 import { Form, Button } from "react-bootstrap";
 
-const BookText = ({ handleChange, searchInput, handleSubmit }) => {
+const BookText = (props) => {
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={props.handleSubmit}>
       <Form.Group controlId="formBasicPassword">
         <Form.Label>Book Search</Form.Label>
         <Form.Control
-          value={searchInput}
-          onChange={handleChange}
+          value={props.searchInput}
+          onChange={props.handleChange}
           type="text"
           placeholder="Enter the name of a book here..."
         />
