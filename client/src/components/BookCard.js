@@ -5,7 +5,7 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const BookCard = (props) => {
   return props.books.length === 0 ? (
-    <h1>There is nothing to display at this time.</h1>
+    <h2 className="text-center">There is nothing to display at this time.</h2>
   ) : (
     props.books[0].map((book, i) => (
       <Card key={i} data-id={i}>

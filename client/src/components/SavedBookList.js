@@ -48,7 +48,9 @@ class SavedBookList extends Component {
 
   render() {
     return (
-      <Container>{this.makeCards(this.state.books, this.removeBook)}</Container>
+      <Container className="mt-3">
+        {this.makeCards(this.state.books, this.removeBook)}
+      </Container>
     );
   }
 }

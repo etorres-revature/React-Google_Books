@@ -4,6 +4,7 @@ import BookNavbar from "./layout/BookNavbar";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
+import NoMatch from "./pages/NoMatch"
 
 import API from "./utils/API";
 
@@ -119,6 +120,7 @@ class App extends Component {
             path="/saved"
             render={() => <Saved title={this.state.saved.title} />}
           />
+          <Route render={() => <NoMatch />} />
         </Switch>
       </Router>
     );

@@ -5,7 +5,9 @@ const Home = (props) => {
   return (
     <div>
       <BookJumbotron title={props.title} />
-      <div>This is home</div>
+      <div>
+
+      </div>
     </div>
   );
 };
