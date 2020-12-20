@@ -22,7 +22,7 @@ const Home = (props) => {
                 </strong>
               </Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card.Text className="text-justify">
                   Follow this link to search the <span className="blue">G</span>
                   <span className="red">o</span>
                   <span className="yellow">o</span>
@@ -53,7 +53,7 @@ const Home = (props) => {
                 </strong>
               </Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card.Text className="text-justify">
                   Follow this link to view books saved as part of your{" "}
                   <span className="blue">G</span>
                   <span className="red">o</span>
