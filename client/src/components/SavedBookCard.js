@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 const SavedBookCard = (props) => {
   return (
@@ -23,7 +23,17 @@ const SavedBookCard = (props) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <Card.Link href={props.book.link}>More Info</Card.Link>
+        <Card.Link href={props.book.link}>More Info</Card.Link>{" "}
+        <Button
+          className="float-right mb-2"
+          variant="danger"
+          size="sm"
+          data-id={props.book._id}
+          onClick={() => props.removeBook(props.book._id)}
+        >
+          {" "}
+          REMOVE{" "}
+        </Button>
       </Card.Footer>
     </Card>
   );

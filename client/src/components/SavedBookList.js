@@ -19,39 +19,37 @@ class SavedBookList extends Component {
   loadBooks = () => {
     API.savedBooks()
       .then((res) => {
-        console.log(res);
-        this.setState({ books: res.data }, () => {
-          console.log(this.state.books);
-        });
+        this.setState({ books: res.data });
       })
       .catch((err) => console.log(err));
   };
 
-  removeBook = (e, id) => {
-    e.preventDefault();
+  removeBook = (id) => {
     API.deleteBook(id)
       .then((res) => {
         console.log(res);
-        alert(`${res.title} has been deleted`);
+        alert(`This book has been deleted`);
       })
       .then((res) => this.loadBooks())
       .catch((err) => console.log(err));
   };
 
-  makeCards = (books) => {
+  makeCards = (books, removeBook) => {
     return books.map((book) => {
       return (
         <SavedBookCard
           key={book._id}
           book={book}
-          removeBook={this.removeBook}
-        />
+          removeBook={removeBook}
+        ></SavedBookCard>
       );
     });
   };
 
   render() {
-    return <Container>{this.makeCards(this.state.books)}</Container>;
+    return (
+      <Container>{this.makeCards(this.state.books, this.removeBook)}</Container>
+    );
   }
 }
 
