@@ -9,7 +9,7 @@ const Search = (props) => {
     <div>
       <BookJumbotron title={props.title} />
       <Container className="mb-4">
-        <div className="card p-3">
+        <div className="card p-3 mt-3">
           <BookText
             handleChange={props.handleChange}
             handleSubmit={props.handleSubmit}
