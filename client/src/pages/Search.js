@@ -16,7 +16,16 @@ const Search = (props) => {
           />
         </div>
       </Container>
-      <BookCardList books={props.books} />
+      <BookCardList
+        books={props.books}
+        handleSaveBook={props.handleSaveBook}
+        as={props.as}
+        type={props.type}
+        value={props.value}
+        variant={props.variant}
+        className={props.classes}
+        size={props.size}
+      />
     </div>
   );
 };

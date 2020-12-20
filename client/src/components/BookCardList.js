@@ -1,10 +1,19 @@
 import React from "react";
-import Card from "./BookCard";
+import BookCard from "./BookCard";
 
 const BookCardList = (props) => {
   return (
     <div>
-      <Card books={props.books} />
+      <BookCard
+        books={props.books}
+        handleSaveBook={props.handleSaveBook}
+        as={props.as}
+        type={props.type}
+        value={props.value}
+        variant={props.variant}
+        className={props.classes}
+        size={props.size}
+      />
     </div>
   );
 };

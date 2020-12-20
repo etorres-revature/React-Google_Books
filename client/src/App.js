@@ -8,14 +8,20 @@ import Saved from "./pages/Saved";
 import API from "./utils/API";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       home: {
         title: "Search and Save Books from the Google API",
       },
       search: {
         title: "Search books from the Google Books API",
+        as: "input",
+        type: "button",
+        value: "Input",
+        variant: "success",
+        classes: "float-right mb-2",
+        size: "sm",
       },
       saved: {
         title: "Saved books from the Google Books API",
@@ -24,10 +30,11 @@ class App extends Component {
       books: [],
       title: "",
       authors: [],
-      description: [],
-      synopsis: "",
+      description: "",
       image: "",
       link: "",
+      publisher: "",
+      publishedDate: "",
     };
   }
 
@@ -40,6 +47,43 @@ class App extends Component {
     API.getBook(this.state.searchInput).then((res) => {
       this.setState({ books: [res.data.items] });
     });
+  };
+
+  handleSaveBook = (e) => {
+    e.preventDefault();
+    let newBook = this.state.books[0].filter((book) => {
+      return book.id === e.target.parentNode.dataset.id;
+    });
+
+    let title = newBook[0].volumeInfo.title;
+    let authors = newBook[0].volumeInfo.authors;
+    let description = newBook[0].volumeInfo.description;
+    let image = newBook[0].volumeInfo.imageLinks.thumbnail;
+    let link = newBook[0].volumeInfo.infoLink;
+    let publisher = newBook[0].volumeInfo.publisher;
+    let publishedDate = newBook[0].volumeInfo.publishedDate;
+
+    this.setState(
+      {
+        title: title,
+        authors: authors,
+        description: description,
+        image: image,
+        link: link,
+        publisher: publisher,
+        publishedDate: publishedDate,
+      },
+      () =>
+        API.saveBook({
+          title: this.state.title,
+          authors: this.state.authors,
+          description: this.state.description,
+          image: this.state.image,
+          link: this.state.link,
+          publisher: this.state.publisher,
+          publishedDate: this.state.publishedDate,
+        })
+    );
   };
 
   render() {
@@ -61,6 +105,12 @@ class App extends Component {
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 books={this.state.books}
+                id={this.state.books}
+                handleSaveBook={this.handleSaveBook}
+                type={this.state.search.type}
+                variant={this.state.search.variant}
+                className={this.state.search.classes}
+                size={this.state.search.size}
               />
             )}
           />

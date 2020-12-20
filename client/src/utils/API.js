@@ -6,15 +6,16 @@ const API = {
   },
 
   deleteBook: (id) => {
-    return axios.delete("/api/books" + id).then((result) => result.data);
+    return axios.delete("/api/books" + id);
   },
 
   saveBook: (bookData) => {
-    return axios.post("/api/books", bookData).then((result) => result.data);
+    console.log(bookData);
+    return axios.post("/api/books", bookData);
   },
 
   savedBooks: () => {
-    return axios.get("/api/books").then((result) => result.data);
+    return axios.get("/api/books");
   },
 };
 

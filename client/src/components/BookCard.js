@@ -1,16 +1,31 @@
 import React from "react";
 import "./BookCard.css";
+import BookButton from "./BookButton";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const BookCard = (props) => {
-  console.log(props.books);
   return props.books.length === 0 ? (
     <h1>There is nothing to display at this time.</h1>
   ) : (
     props.books[0].map((book, i) => (
-      <Card key={i}>
+      <Card key={i} data-id={i}>
         <Card.Body>
-          <Card.Header>{book.volumeInfo.title}</Card.Header>{" "}
+          <Card.Header data-id={i}>
+            {book.volumeInfo.title}{" "}
+            <div className="float-right mb-2" data-id={book.id}>
+              <BookButton
+                handleSaveBook={props.handleSaveBook}
+                as={props.as}
+                type={props.type}
+                value={props.value}
+                variant={props.variant}
+                className={props.classes}
+                size={props.size}
+              >
+                Save
+              </BookButton>
+            </div>
+          </Card.Header>{" "}
           <img
             className="bookImage float-left mr-2"
             alt={"cover art for " + book.volumeInfo.title}
