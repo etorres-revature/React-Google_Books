@@ -40,35 +40,35 @@ Users start using the [Google Books API Search](https://lit-citadel-69293.heroku
 
 Navigating to the Search Page displays a text input for Users to type in the names of books that they want to search. Information is conditionally displayed such that when there is nothing to display, Users see that message.
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-nosearch.png)
+![GOOGLE BOOKS API SEARCH search page](./screenshots/google-books-nosearch.png)
 
 Once a user has entered the name of a book for which to search, then the app displays a card per book dynamically with the information returned from the Google Books API.
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-books-search.png)
+![GOOGLE BOOKS API SEARCH search page with search](./screenshots/google-books-search.png)
 
 Each book card has a "save" button that will include that particular book card's information in the MondoDB database.
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-search-save.png)
+![GOOGLE BOOKS API SEARCH save alert](./screenshots/google-books-search-save.png)
 
 Navigating to the Saved Page dynamically displays a book card for each book that has been saved into the MongoDB database.
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-saved.png)
+![GOOGLE BOOKS API SEARCH saved page](./screenshots/google-books-saved.png)
 
 If a User discovers for any reason that a book needs to be removed form the MongoDB database (if there is a duplicate, for instance...)
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-saved-duplicate.png)
+![GOOGLE BOOKS API SEARCH saved page with duplicate](./screenshots/google-books-saved-duplicate.png)
 
 ... then the User can click on the "remove" button of the book card associated with the book to be removed; ...
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-remove.png)
+![GOOGLE BOOKS API SEARCH remove alert](./screenshots/google-books-remove.png)
 
 ... and, that book's information will be deleted from the MongoDB database and no longer be dynamically displayed on the Saved Page.
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-noduplicate.png)
+![GOOGLE BOOKS API SEARCH no more duplicate on page](./screenshots/google-books-noduplicate.png)
 
 The [Google Books API Search](https://lit-citadel-69293.herokuapp.com/) also has a NoMatch Page. When a User attempts to visit a URI/URL that is not in the client-side router, the following page will be displayed:
 
-![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-nomatch.png)
+![GOOGLE BOOKS API SEARCH nomatch page](./screenshots/google-books-nomatch.png)
 
 ## Guidelines for Contributing
 
