@@ -12,11 +12,7 @@ const BookText = (props) => {
           placeholder="Enter the name of a book here..."
         />
       </Form.Group>
-      <Button
-        className="float-right"
-        variant="info"
-        type="submit"
-      >
+      <Button className="float-right" variant="info" type="submit">
         Search for Books
       </Button>
     </Form>

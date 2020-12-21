@@ -86,6 +86,8 @@ class App extends Component {
           publishedDate: this.state.publishedDate,
         })
     );
+
+    alert(`This book has been saved`);
   };
 
   render() {
