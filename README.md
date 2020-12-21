@@ -4,13 +4,13 @@
 
 ## Project Description
 
-[Google Books API Search](https://lit-citadel-69293.herokuapp.com/search) is a [MERN full-stack](https://www.geeksforgeeks.org/mern-stack/) web-application. The front-end is displayed using [React.js](https://reactjs.org/) with client-side routing provided by the [react router](https://reactrouter.com/web/guides/quick-start). Server-side routing is performed with [Express.js](https://expressjs.com/). The development environment was provided by [Node.js](https://nodejs.org/en/). And, persistent data is stored in a [MongoDB](https://www.mongodb.com/) database.
+[Google Books API Search](https://lit-citadel-69293.herokuapp.com) is a [MERN full-stack](https://www.geeksforgeeks.org/mern-stack/) web-application. The front-end is displayed using [React.js](https://reactjs.org/) with client-side routing provided by the [react router](https://reactrouter.com/web/guides/quick-start). Server-side routing is performed with [Express.js](https://expressjs.com/). The development environment was provided by [Node.js](https://nodejs.org/en/). And, persistent data is stored in a [MongoDB](https://www.mongodb.com/) database.
 
-Users are taken to the homepage where they can choose to search the [Google Books API](https://developers.google.com/books) or see books saved in the MongoDB database.
+Users are taken to the Home Page where they can choose to search the [Google Books API](https://developers.google.com/books) or see books saved in the MongoDB database.
 
-The search page provides a text input component that makes a call to the Google Books API and returns book information that is dynamically displayed. There is a "save" button that will add new books to the MongoDB database.
+The Search Page provides a text input component that makes a call to the Google Books API and returns book information that is dynamically displayed. There is a "save" button that will add new books to the MongoDB database.
 
-The saved page connects to the MongoDB database to pull information on books that have been saved previously and dynamically display them. There is a "remove" button in case duplicate books have been saved, or the user wants to delete a book from the MongoDB database.
+The Saved Page connects to the MongoDB database to pull information on books that have been saved previously and dynamically display them. There is a "remove" button in case duplicate books have been saved, or the user wants to delete a book from the MongoDB database.
 
 ## Table of Contents
 
@@ -33,6 +33,42 @@ If you want to use this code for yourself please clone/fork the [Google Books AP
 ## Usage
 
 The [Google Books API repository](https://github.com/etorres-revature/React-Google_Books) is [deployed on Heroku](https://lit-citadel-69293.herokuapp.com/).
+
+Users start using the [Google Books API Search](https://lit-citadel-69293.herokuapp.com/) on the Home Page.
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-home.png)
+
+Navigating to the Search Page displays a text input for Users to type in the names of books that they want to search. Information is conditionally displayed such that when there is nothing to display, Users see that message.
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-nosearch.png)
+
+Once a user has entered the name of a book for which to search, then the app displays a card per book dynamically with the information returned from the Google Books API.
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-books-search.png)
+
+Each book card has a "save" button that will include that particular book card's information in the MondoDB database.
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-search-save.png)
+
+Navigating to the Saved Page dynamically displays a book card for each book that has been saved into the MongoDB database.
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-saved.png)
+
+If a User discovers for any reason that a book needs to be removed form the MongoDB database (if there is a duplicate, for instance...)
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-saved-duplicate.png)
+
+... then the User can click on the "remove" button of the book card associated with the book to be removed; ...
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-remove.png)
+
+... and, that book's information will be deleted from the MongoDB database and no longer be dynamically displayed on the Saved Page.
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-noduplicate.png)
+
+The [Google Books API Search](https://lit-citadel-69293.herokuapp.com/) also has a NoMatch Page. When a User attempts to visit a URI/URL that is not in the client-side router, the following page will be displayed:
+
+![GOOGLE BOOKS API SEARCH home page](./screenshots/google-books-nomatch.png)
 
 ## Guidelines for Contributing
 
